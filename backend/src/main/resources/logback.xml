@@ -1,0 +1,21 @@
+<configuration>
+    <property name="log_dir" value="/var/log/colon.link"/>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log_dir}/colon.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${log_dir}/application.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>[%date{yyyy-MM-dd HH:mm:ss Z,Asia/Bangkok}] [%level] %logger{15} %message%n%xException</pattern>
+        </layout>
+    </appender>
+
+    <root level="ERROR">
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <logger name="link.colon.controller" level="INFO"/>
+    <logger name="org.springframework.jdbc.core" level="TRACE"/>
+
+</configuration>

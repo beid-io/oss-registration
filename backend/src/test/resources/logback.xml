@@ -1,0 +1,16 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%logger{0} %message%n%xException</pattern>
+        </encoder>
+    </appender>
+
+    <root level="ERROR">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <logger name="link.colon" level="INFO"/>
+    <logger name="org.springframework.jdbc.core" level="TRACE"/>
+
+</configuration>
