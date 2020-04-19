@@ -18,8 +18,8 @@ class Account {
 
     @PostMapping(value = "/account/save")
     private String postParams(@RequestParam("random_uuid") final String uuid
-    , @RequestParam("citizen_id") final String cid) {
-        return facade.save(uuid);
+    , @RequestParam("json_data") final String jsonData) {
+        return facade.save(uuid, jsonData);
     }
 
 }

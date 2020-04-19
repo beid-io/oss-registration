@@ -1,4 +1,4 @@
-package io.beid.module.econsent;
+package io.beid.module.account;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,16 +12,16 @@ import java.sql.Timestamp;
 
 @Data
 @Entity
-@Table(name = "econsents")
+@Table(name = "accounts")
 @NoArgsConstructor
 @AllArgsConstructor
-public class ConsentEntity implements Persistable<String>, Serializable {
+public class AccountEntity implements Persistable<String>, Serializable {
 
     @Id
     public String uuid;
 
-    @Column(name = "is_accept")
-    public Boolean isAccept;
+    @Column(name = "json_data")
+    public String jsonData;
 
     public Timestamp created;
 

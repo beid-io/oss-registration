@@ -19,8 +19,6 @@ class Econsent {
     @PostMapping(value = "/econsent/submit")
     private String postParams(@RequestParam("random_uuid") final String uuid
             , @RequestParam("is_accept") final boolean isAccept) {
-        log.info("UUID {}, accept = {}", uuid, isAccept);
-
         return facade.save(uuid, isAccept);
     }
 
