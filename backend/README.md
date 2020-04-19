@@ -30,6 +30,12 @@ redis = new RegisterRedis("redis://redishost:6379");
  หาเอาเอง
 ```
 
+## devtest
+```
+alias mvnrun='mvn spring-boot:run'
+mvn spring-boot:run
+```
+
 ## production run
 ```
 java -jar springboot-book-1.0.jar -Xmx128M -Xms128M
