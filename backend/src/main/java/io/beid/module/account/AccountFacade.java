@@ -21,7 +21,7 @@ public class AccountFacade {
         if (consent.isEmpty())
             return "nok";
 
-        if (consent.map(e -> !e.is_accept).get())
+        if (consent.map(e -> !e.isAccept).get())
             return "nok";
 
         return "ok";

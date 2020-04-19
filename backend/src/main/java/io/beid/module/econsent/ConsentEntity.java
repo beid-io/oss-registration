@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.domain.Persistable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -22,8 +19,12 @@ public class ConsentEntity implements Persistable<String>, Serializable {
 
     @Id
     public String uuid;
-    public Boolean is_accept;
+
+    @Column(name = "is_accept")
+    public Boolean isAccept;
+
     public Timestamp created;
+
     @Transient public boolean isNew = false;
 
     @Override
