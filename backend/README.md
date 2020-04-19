@@ -14,7 +14,6 @@ redis = new RegisterRedis("redis://redishost:6379");
  > brew install postgresql redis
 ```
 
-
 ##สำหรับคนใช้ Windows (Power Shell)
 ```
  > Set-ExecutionPolicy RemoteSigned -scope CurrentUser
@@ -24,8 +23,11 @@ redis = new RegisterRedis("redis://redishost:6379");
  > scoop install maven
  > scoop bucket add extras
  > scoop install protobuf
- 
-... หาเอาเอง
+```
+
+##สำหรับคนใช้ Linux / Unix อื่นๆ 
+```
+ หาเอาเอง
 ```
 
 ## production run
