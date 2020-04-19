@@ -13,7 +13,7 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%logger{0} %message%n%xException</pattern>
+            <pattern>[%date{HH:mm:ss}] %logger{0} %message%n%xException</pattern>
         </encoder>
     </appender>
 

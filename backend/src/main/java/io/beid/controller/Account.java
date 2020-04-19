@@ -17,9 +17,14 @@ class Account {
     private AccountFacade facade;
 
     @PostMapping(value = "/account/save")
-    private String postParams(@RequestParam("random_uuid") final String uuid
+    private String save(@RequestParam("random_uuid") final String uuid
     , @RequestParam("json_data") final String jsonData) {
         return facade.save(uuid, jsonData);
+    }
+
+    @PostMapping(value = "/account/info")
+    private String info(@RequestParam("random_uuid") final String uuid) {
+        return facade.find(uuid);
     }
 
 }

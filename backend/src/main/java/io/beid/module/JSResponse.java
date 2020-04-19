@@ -1,4 +1,4 @@
-package io.beid;
+package io.beid.module;
 
 import lombok.RequiredArgsConstructor;
 

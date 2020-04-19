@@ -19,13 +19,15 @@ public class ConsentFacade {
 
     @Transactional
     public String save(final String uuid, final Boolean isAccept) {
-        log.info("UUID {}, accept = {}", uuid, isAccept);
-
         val entity = new ConsentEntity(
                 uuid
                 , isAccept
                 , new Timestamp(System.currentTimeMillis())
                 , false);
+
+        val econsent = jdbc.findById(uuid);
+        if (econsent.isPresent() && econsent.get().isAccept)
+            return "nok";
 
         jdbc.save(entity);
 
