@@ -23,7 +23,7 @@ public class ConsentEntity implements Persistable<String>, Serializable {
     @Id
     public String uuid;
     public Boolean is_accept;
-    public Timestamp crated;
+    public Timestamp created;
     @Transient public boolean isNew = false;
 
     @Override

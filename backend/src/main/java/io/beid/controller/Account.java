@@ -1,6 +1,6 @@
 package io.beid.controller;
 
-import io.beid.module.econsent.ConsentFacade;
+import io.beid.module.account.AccountFacade;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,17 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-class Econsent {
+class Account {
 
     @Autowired
-    private ConsentFacade facade;
+    private AccountFacade facade;
 
-    @PostMapping(value = "/econsent/submit")
+    @PostMapping(value = "/account/save")
     private String postParams(@RequestParam("random_uuid") final String uuid
-            , @RequestParam("is_accept") final boolean isAccept) {
-        log.info("UUID {}, accept = {}", uuid, isAccept);
-
-        return facade.save(uuid, isAccept);
+    , @RequestParam("citizen_id") final String cid) {
+        return facade.save(uuid);
     }
 
 }
