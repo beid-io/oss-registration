@@ -1,5 +1,5 @@
 <configuration>
-    <property name="log_dir" value="/var/log/colon.link"/>
+    <property name="log_dir" value="log"/>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${log_dir}/colon.log</file>
@@ -15,7 +15,7 @@
         <appender-ref ref="FILE"/>
     </root>
 
-    <logger name="link.colon.controller" level="INFO"/>
+    <logger name="io.beid" level="INFO"/>
     <logger name="org.springframework.jdbc.core" level="TRACE"/>
 
 </configuration>
